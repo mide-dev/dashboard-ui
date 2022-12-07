@@ -22,51 +22,53 @@
           </svg>
           <p class="btn-text">Add new task</p>
         </button>
-        <ul class="sidebar-menu">
-          <li class="sidebar-item" id="plan">
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
-            </svg>
-            <p>Plan</p>
-          </li>
-          <li class="sidebar-item" id="task-list">
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
-            </svg>
-            <p>Task List</p>
-          </li>
-          <li class="sidebar-item" id="projects">
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-folder"></use>
-            </svg>
-            <p>Projects</p>
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-expand"></use>
-            </svg>
-            <ul class="project-list">
-              <!-- USE JAVASCRIPT TO SET THIS -->
-              <li class="project-items">Meridian</li>
-              <li class="project-items">Risen</li>
-              <li class="project-items">Skillex</li>
-              <li class="project-items">Statra Insurance</li>
+        <nav class="nav-sidebar-menu">
+          <ul class="nav-sidebar-list">
+            <li class="nav-sidebar-item plan">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
+              </svg>
+              <p>Plan</p>
+            </li>
+            <li class="nav-sidebar-item task-list">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
+              </svg>
+              <p>Task List</p>
+            </li>
+            <li class="nav-sidebar-item projects">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-folder"></use>
+              </svg>
+              <p>Projects</p>
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-expand"></use>
+              </svg>
+              <ul class="project-list">
+                <!-- USE JAVASCRIPT TO SET THIS -->
+                <li class="project-items">Meridian</li>
+                <li class="project-items">Risen</li>
+                <li class="project-items">Skillex</li>
+                <li class="project-items">Statra Insurance</li>
 
-              <li class="add-new-project">
-                <svg class="all-icons">
-                  <use xlink:href="assets/all-icons.svg#icon-plus"></use>
-                </svg>
-                <p>Add New</p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-tag"></use>
-            </svg>
-            <p>Tags</p>
-          </li>
-        </ul>
+                <li class="add-new-project">
+                  <svg class="all-icons">
+                    <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+                  </svg>
+                  <p>Add New</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-tag"></use>
+              </svg>
+              <p>Tags</p>
+            </li>
+          </ul>
+        </nav>
         <div class="account-plan">
-          <div class="sidebar-item" id="free-plan">
+          <div class="nav-sidebar-item free-plan">
             <svg class="all-icons">
               <use xlink:href="assets/all-icons.svg#icon-folder-open"></use>
             </svg>
@@ -86,7 +88,7 @@
         </div>
       </aside>
       <main>
-        <nav class="nav-menu">
+        <header>
           <div>
             <div class="project-dropdown">
               <h1>Stastra Insurance</h1>
@@ -119,27 +121,29 @@
               </button>
             </div>
           </div>
-          <div>
-            <div class="backlog">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-backlog"></use>
-              </svg>
-              <p>Backlog</p>
-            </div>
-            <div class="priority-chart">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-priority"></use>
-              </svg>
-              <p>Priority Chart</p>
-            </div>
-            <div class="kanban-workflow">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-workflow"></use>
-              </svg>
-              <p>Kanban Workflow</p>
-            </div>
-          </div>
-        </nav>
+          <nav class="nav-main-menu">
+            <ul class="nav-main-list">
+              <li class="nav-main-item backlog">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-backlog"></use>
+                </svg>
+                <p>Backlog</p>
+              </li>
+              <li class="nav-main-item priority-chart">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-priority"></use>
+                </svg>
+                <p>Priority Chart</p>
+              </li>
+              <li class="nav-main-item kanban-workflow">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-workflow"></use>
+                </svg>
+                <p>Kanban Workflow</p>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <section>
           <div class="search-bar">
             <svg class="all-icons">
