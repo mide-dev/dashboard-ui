@@ -8,7 +8,7 @@
     <title>Admin Dashbord</title>
   </head>
   <body>
-    <section>
+    <div>
       <aside class="sidebar">
         <div class="logo-wrap">
           <svg class="all-icons">
@@ -16,7 +16,7 @@
           </svg>
           <span class="logo-text">Flows list</span>
         </div>
-        <button class="btn-primary">
+        <button class="btn-rect btn-primary">
           <svg class="all-icons">
             <use xlink:href="assets/all-icons.svg#icon-plus"></use>
           </svg>
@@ -87,39 +87,86 @@
       </aside>
       <main>
         <nav class="nav-menu">
-          <div class="project-dropdown">
-            <h1>Stastra Insurance</h1>
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-expand"></use>
-            </svg>
-          </div>
           <div>
-            <div class="team-members">
-              <img src="assets/Storyavatar.png" />
-              <img src="assets/48.png" />
-              <div class="other-members">
-                <span>+8</span>
-              </div>
-            </div>
-            <button>
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-app"></use>
-              </svg>
-              <p>Apps</p>
+            <div class="project-dropdown">
+              <h1>Stastra Insurance</h1>
               <svg class="all-icons">
                 <use xlink:href="assets/all-icons.svg#icon-expand"></use>
               </svg>
-            </button>
-            <button class="btn-primary">
+            </div>
+            <div>
+              <div class="team-members">
+                <img src="assets/Storyavatar.png" />
+                <img src="assets/48.png" />
+                <div class="other-members">
+                  <span>+8</span>
+                </div>
+              </div>
+              <button class="btn-app">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-app"></use>
+                </svg>
+                <p>Apps</p>
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-expand"></use>
+                </svg>
+              </button>
+              <button class="btn-rect btn-secondary">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+                </svg>
+                <p class="btn-text">Add new task</p>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="backlog">
               <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+                <use xlink:href="assets/all-icons.svg#icon-backlog"></use>
               </svg>
-              <p class="btn-text">Add new task</p>
-            </button>
+              <p>Backlog</p>
+            </div>
+            <div class="priority-chart">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-priority"></use>
+              </svg>
+              <p>Priority Chart</p>
+            </div>
+            <div class="kanban-workflow">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-workflow"></use>
+              </svg>
+              <p>Kanban Workflow</p>
+            </div>
           </div>
         </nav>
+        <section>
+          <div class="search-bar">
+            <svg class="all-icons">
+              <use xlink:href="assets/all-icons.svg#icon-magnify"></use>
+            </svg>
+            <input type="text" />
+          </div>
+          <div>
+            <div class="select-timeframe">
+              <div class="switch">
+                <input type="radio" />
+              </div>
+              <p>Select Timeframe</p>
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-expand"></use>
+              </svg>
+            </div>
+            <div class="share">
+              <svg class="all-icons">
+                <use xlink:href="assets/all-icons.svg#icon-share"></use>
+              </svg>
+              <p>Share</p>
+            </div>
+          </div>
+        </section>
       </main>
-    </section>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
