@@ -1,3 +1,29 @@
+:root {
+  --clr-lime-300: hsl(82, 85%, 67%);
+  --clr-lime-400: hsl(83, 78%, 55%);
+
+  --clr-grey-200: hsl(72, 33%, 97%);
+  --clr-grey-300: hsl(54, 36%, 95%);
+  --clr-grey-400: hsl(180, 1%, 84%);
+  --clr-grey-500: hsl(72, 2%, 57%);
+  --clr-grey-900: hsl(210, 10%, 16%);
+
+  --clr-amber-200: hsl(48, 97%, 77%);
+  --clr-amber-600: hsl(20, 64%, 58%);
+
+  --clr-purple-300: hsl(269, 97%, 85%);
+  --clr-purple-800: hsl(267, 34%, 40%);
+
+  --clr-fuchsia-300: hsl(291, 93%, 83%);
+  --clr-fuchsia-800: hsl(298, 36%, 41%);
+
+  --clr-blue-900: hsl(216, 50%, 28%);
+  --clr-blue-300: hsl(212, 96%, 78%);
+
+  --clr-gold-800: hsl(49, 29%, 48%);
+  --clr-gold-300: hsl(49, 52%, 80%);
+}
+
 /* CSS RESET */
 /* Box sizing rules */
 *,
