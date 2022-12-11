@@ -169,12 +169,22 @@ button {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+  grid-template-columns: fit-content(40ch) minmax(min(50vw, 50ch), 1fr);
+  /* gap: var(--size-600); */
 }
 
-.all-icons {
-  aspect-ratio: 1;
-  width: 20px;
+.sidebar {
+  position: relative;
+  padding-right: var(--size-600);
+}
+
+.sidebar::after {
+  content: "";
+  background: var(--clr-grey-400);
+  position: absolute;
+  inset-block: 20px;
+  right: 0;
+  width: 1.5px;
 }
 
 .content-grid {
@@ -190,6 +200,11 @@ button {
   padding-inline: var(--size-300);
 }
 
+.all-icons {
+  aspect-ratio: 1;
+  width: 20px;
+}
+
 /* UTILITY CLASS */
 .container {
   width: 95%;
@@ -199,6 +214,12 @@ button {
 .flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+.primary-heading {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-primary-heading);
+  font-weight: var(--fw-bold);
 }
 
 .high-priority {
