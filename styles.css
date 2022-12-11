@@ -22,7 +22,7 @@
   --clr-blue-900: hsl(216, 50%, 28%);
   --clr-blue-300: hsl(212, 96%, 78%);
 
-  --clr-gold-800: hsl(49, 29%, 48%);
+  --clr-gold-800: hsl(49, 49%, 39%);
   --clr-gold-300: hsl(49, 52%, 80%);
 
   /* project font(s) */
@@ -52,6 +52,7 @@
   --fs-button: var(--fs-400);
 
   /* general spacing */
+  --size-50: 0.125rem;
   --size-100: 0.25rem;
   --size-200: 0.5rem;
   --size-300: 0.75rem;
@@ -181,10 +182,23 @@ button {
   grid-template-columns: repeat(3, 1fr);
 }
 
+:where([data-tag="true"])::before {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: var(--size-500);
+  padding-inline: var(--size-300);
+}
+
 /* UTILITY CLASS */
 .container {
   width: 95%;
   margin-inline: auto;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .high-priority {
@@ -210,13 +224,14 @@ button {
 .btn-secondary {
   color: var(--clr-grey-200);
   background-color: var(--clr-grey-900);
+  fill: white;
 }
 
 .btn-rect {
   padding-block: var(--size-300);
-  padding-inline: var(--size-700);
+  padding-inline: var(--size-600);
   border: none;
-  border-radius: var(--size-200);
+  border-radius: var(--size-100);
 }
 
 .btn-circle {
@@ -225,7 +240,26 @@ button {
   border-radius: 50%;
 }
 
-span:where() .tag-prototype {
-  color: var(---clr-purple-800);
+.tag-prototype::before {
+  content: "Prototype";
+  color: var(--clr-purple-800);
   background-color: var(--clr-purple-300);
+}
+
+.tag-research::before {
+  content: "Research";
+  color: var(--clr-fuchsia-800);
+  background-color: var(--clr-fuchsia-300);
+}
+
+.tag-design::before {
+  content: "Design";
+  color: var(--clr-blue-900);
+  background-color: var(--clr-blue-300);
+}
+
+.tag-design::before {
+  content: "Design System";
+  color: var(--clr-gold-800);
+  background-color: var(--clr-gold-300);
 }
