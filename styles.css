@@ -1,4 +1,5 @@
 :root {
+  /* color palette */
   --clr-lime-300: hsl(82, 85%, 67%);
   --clr-lime-400: hsl(83, 78%, 55%);
 
@@ -6,6 +7,7 @@
   --clr-grey-300: hsl(54, 36%, 95%);
   --clr-grey-400: hsl(180, 1%, 84%);
   --clr-grey-500: hsl(72, 2%, 57%);
+  --clr-grey-600: hsl(260, 2%, 27%);
   --clr-grey-900: hsl(210, 10%, 16%);
 
   --clr-amber-200: hsl(48, 97%, 77%);
@@ -22,7 +24,53 @@
 
   --clr-gold-800: hsl(49, 29%, 48%);
   --clr-gold-300: hsl(49, 52%, 80%);
+
+  /* project font(s) */
+  --ff-primary: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  /* font weights*/
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* font sizes */
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fs-body: var(--fs-600);
+  --fs-primary-heading: var(--fs-700);
+  --fs-secondary-heading: var(--fs-500);
+  --fs-nav: var(--fs-400);
+  --fs-button: var(--fs-400);
+
+  /* general spacing */
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
 }
+
+/* @media (min-width: 50em) {
+  :root {
+    --fs-body: var(--fs-400);
+    --fs-primary-heading: var(--fs-700);
+    --fs-secondary-heading: var(--fs-600);
+    --fs-nav: var(--fs-400);
+  }
+} */
 
 /* CSS RESET */
 /* Box sizing rules */
@@ -101,13 +149,83 @@ select {
   }
 }
 
-/* BASE STYLES */
-svg {
-  width: 20px;
+/* GENERAL CLASS */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  color: var(--clr-grey-900);
+  background-color: var(--clr-grey-200);
 }
 
-/* LAYOUT STYLES */
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--size-100);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+}
 
 .all-icons {
   aspect-ratio: 1;
+  width: 20px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* UTILITY CLASS */
+.container {
+  width: 95%;
+  margin-inline: auto;
+}
+
+.high-priority {
+  color: var(--clr-amber-600);
+  background-color: var(--clr-amber-200);
+}
+
+.medium-priority {
+  color: var(--clr-gold-800);
+  color: var(--clr-gold-300);
+}
+
+.low-priority {
+  color: var(--clr-grey-500);
+  color: var(--clr-grey-400);
+}
+
+.btn-primary {
+  color: var(--clr-grey-600);
+  background-color: var(--clr-lime-300);
+}
+
+.btn-secondary {
+  color: var(--clr-grey-200);
+  background-color: var(--clr-grey-900);
+}
+
+.btn-rect {
+  padding-block: var(--size-300);
+  padding-inline: var(--size-700);
+  border: none;
+  border-radius: var(--size-200);
+}
+
+.btn-circle {
+  padding: var(--size-300);
+  border: none;
+  border-radius: 50%;
+}
+
+span:where() .tag-prototype {
+  color: var(---clr-purple-800);
+  background-color: var(--clr-purple-300);
 }
