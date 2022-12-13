@@ -10,84 +10,90 @@
   <body>
     <div class="container dashboard-grid">
       <aside class="sidebar">
-        <div class="logo-wrap">
-          <svg class="all-icons">
-            <use xlink:href="assets/all-icons.svg#icon-logo"></use>
-          </svg>
-          <span class="logo-text">Flows list</span>
-        </div>
-        <button class="btn-rect btn-primary">
-          <svg class="all-icons">
-            <use xlink:href="assets/all-icons.svg#icon-plus"></use>
-          </svg>
-          <p class="btn-text">Add new task</p>
-        </button>
-        <nav class="nav-sidebar-menu">
-          <ul class="nav-sidebar-list">
-            <li class="nav-sidebar-item plan">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
-              </svg>
-              <p>Plan</p>
-            </li>
-            <li class="nav-sidebar-item task-list">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
-              </svg>
-              <p>Task List</p>
-            </li>
-            <li class="nav-sidebar-item projects">
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-folder"></use>
-              </svg>
-              <p>Projects</p>
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-expand"></use>
-              </svg>
-              <ul class="project-list">
-                <!-- USE JAVASCRIPT TO SET THIS -->
-                <li class="project-items">Meridian</li>
-                <li class="project-items">Risen</li>
-                <li class="project-items">Skillex</li>
-                <li class="project-items">Statra Insurance</li>
-
-                <li class="add-new-project">
+        <div class="flex-col">
+          <div class="logo-wrap flex">
+            <svg class="all-icons icon-logo">
+              <use xlink:href="assets/all-icons.svg#icon-logo"></use>
+            </svg>
+            <span class="logo-text secondary-heading">Flows list</span>
+          </div>
+          <button class="btn-rect btn-primary">
+            <svg class="all-icons">
+              <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+            </svg>
+            <p class="btn-text">Add new task</p>
+          </button>
+          <div class="flex-between-col">
+            <nav class="nav-sidebar-menu">
+              <ul class="nav-sidebar-list">
+                <li class="nav-sidebar-item plan | flex">
                   <svg class="all-icons">
-                    <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+                    <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
                   </svg>
-                  <p>Add New</p>
+                  <p>Plan</p>
+                </li>
+                <li class="nav-sidebar-item task-list | flex">
+                  <svg class="all-icons">
+                    <use xlink:href="assets/all-icons.svg#icon-calendar"></use>
+                  </svg>
+                  <p>Task List</p>
+                </li>
+                <li class="nav-sidebar-item projects flex-between">
+                  <div class="flex">
+                    <svg class="all-icons">
+                      <use xlink:href="assets/all-icons.svg#icon-folder"></use>
+                    </svg>
+                    <p>Projects</p>
+                  </div>
+                  <svg class="all-icons">
+                    <use xlink:href="assets/all-icons.svg#icon-expand"></use>
+                  </svg>
+                  <ul class="project-list hidden">
+                    <!-- USE JAVASCRIPT TO SET THIS -->
+                    <li class="project-items">Meridian</li>
+                    <li class="project-items">Risen</li>
+                    <li class="project-items">Skillex</li>
+                    <li class="project-items">Statra Insurance</li>
+
+                    <li class="add-new-project">
+                      <svg class="all-icons">
+                        <use xlink:href="assets/all-icons.svg#icon-plus"></use>
+                      </svg>
+                      <p>Add New</p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-sidebar-item tags | flex">
+                  <svg class="all-icons">
+                    <use xlink:href="assets/all-icons.svg#icon-tag"></use>
+                  </svg>
+                  <p>Tags</p>
                 </li>
               </ul>
-            </li>
-            <li>
-              <svg class="all-icons">
-                <use xlink:href="assets/all-icons.svg#icon-tag"></use>
-              </svg>
-              <p>Tags</p>
-            </li>
-          </ul>
-        </nav>
-        <div class="account-plan">
-          <div class="nav-sidebar-item free-plan">
-            <svg class="all-icons">
-              <use xlink:href="assets/all-icons.svg#icon-folder-open"></use>
-            </svg>
-            <p>Free Plan</p>
-          </div>
-          <div class="no-of-projects-wrap">
-            <p class="no-of-projects">Projects</p>
-            <p class="no-of-projects-count">4/10</p>
-          </div>
-          <div class="no-of-projects-range">
-            <input type="range" min="0" max="10" value="6" />
-          </div>
-          <div class="no-of-tasks-wrap">
-            <p class="no-of-tasks">Tasks</p>
-            <p class="no-of-tasks-count">Unlimited</p>
+            </nav>
+            <div class="account-plan">
+              <div class="nav-sidebar-item free-plan | flex">
+                <svg class="all-icons">
+                  <use xlink:href="assets/all-icons.svg#icon-folder-open"></use>
+                </svg>
+                <p>Free Plan</p>
+              </div>
+              <div class="no-of-projects-wrap | flex-between">
+                <p class="no-of-projects">Projects</p>
+                <p class="no-of-projects-count">4/10</p>
+              </div>
+              <div class="no-of-projects-range">
+                <input type="range" min="0" max="10" value="6" />
+              </div>
+              <div class="no-of-tasks-wrap | flex-between">
+                <p class="no-of-tasks">Tasks</p>
+                <p class="no-of-tasks-count">Unlimited</p>
+              </div>
+            </div>
           </div>
         </div>
       </aside>
-      <main>
+      <main class="main">
         <header>
           <div>
             <div class="project-dropdown">
