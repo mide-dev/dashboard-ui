@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Admin Dashbord</title>
   </head>
@@ -12,7 +18,7 @@
       <aside class="sidebar">
         <div class="container">
           <div class="flex-col">
-            <div class="logo-wrap flex">
+            <div class="logo-wrap | flex">
               <svg class="all-icons icon-logo">
                 <use xlink:href="assets/all-icons.svg#icon-logo"></use>
               </svg>
@@ -26,7 +32,7 @@
             </button>
             <div class="flex-between-col">
               <nav class="nav-sidebar-menu">
-                <ul class="nav-sidebar-list">
+                <ul class="nav-sidebar-list | font-semi-bold">
                   <li class="nav-sidebar-item plan | flex">
                     <svg class="all-icons">
                       <use
@@ -43,7 +49,7 @@
                     </svg>
                     <p>Task List</p>
                   </li>
-                  <li class="nav-sidebar-item projects flex-between">
+                  <li class="nav-sidebar-item projects | flex-between">
                     <div class="flex">
                       <svg class="all-icons">
                         <use
@@ -55,7 +61,7 @@
                     <svg class="all-icons">
                       <use xlink:href="assets/all-icons.svg#icon-expand"></use>
                     </svg>
-                    <ul class="project-list hidden">
+                    <ul class="project-list | hidden">
                       <!-- USE JAVASCRIPT TO SET THIS -->
                       <li class="project-items">Meridian</li>
                       <li class="project-items">Risen</li>
@@ -81,7 +87,7 @@
                 </ul>
               </nav>
               <div class="account-plan">
-                <div class="nav-sidebar-item free-plan | flex">
+                <div class="nav-sidebar-item free-plan | flex font-semi-bold">
                   <svg class="all-icons">
                     <use
                       xlink:href="assets/all-icons.svg#icon-folder-open"
@@ -90,15 +96,15 @@
                   <p>Free Plan</p>
                 </div>
                 <div class="no-of-projects-wrap | flex-between">
-                  <p class="no-of-projects">Projects</p>
-                  <p class="no-of-projects-count">4/10</p>
+                  <p class="no-of-projects | font-semi-bold">Projects</p>
+                  <p class="no-of-projects-count | font-light">4/10</p>
                 </div>
                 <div class="no-of-projects-range">
                   <input type="range" min="0" max="10" value="6" />
                 </div>
                 <div class="no-of-tasks-wrap | flex-between">
-                  <p class="no-of-tasks">Tasks</p>
-                  <p class="no-of-tasks-count">Unlimited</p>
+                  <p class="no-of-tasks | font-semi-bold">Tasks</p>
+                  <p class="no-of-tasks-count | font-light">Unlimited</p>
                 </div>
               </div>
             </div>
@@ -106,10 +112,10 @@
         </div>
       </aside>
       <main class="main">
-        <div class="container">
-          <header>
+        <div>
+          <header class="container">
             <div class="flex-between margin-bottom">
-              <div class="project-dropdown flex">
+              <div class="project-dropdown | flex">
                 <h1>Stastra Insurance</h1>
                 <svg class="all-icons">
                   <use xlink:href="assets/all-icons.svg#icon-expand"></use>
@@ -145,37 +151,50 @@
               </div>
             </div>
             <nav class="nav-main-menu">
-              <ul class="nav-main-list flex font-bold">
-                <li class="nav-main-item backlog flex">
-                  <svg class="all-icons">
-                    <use xlink:href="assets/all-icons.svg#icon-backlog"></use>
-                  </svg>
-                  <p>Backlog</p>
+              <ul
+                class="nav-main-list | flex font-semi-bold"
+                style="gap: var(--size-700)"
+              >
+                <li class="nav-main-item backlog">
+                  <a href="#" class="flex">
+                    <svg class="all-icons">
+                      <use xlink:href="assets/all-icons.svg#icon-backlog"></use>
+                    </svg>
+                    <p>Backlog</p>
+                  </a>
                 </li>
-                <li class="nav-main-item priority-chart flex">
-                  <svg class="all-icons">
-                    <use xlink:href="assets/all-icons.svg#icon-priority"></use>
-                  </svg>
-                  <p>Priority Chart</p>
+                <li class="nav-main-item priority-chart">
+                  <a href="#" class="flex">
+                    <svg class="all-icons">
+                      <use
+                        xlink:href="assets/all-icons.svg#icon-priority"
+                      ></use>
+                    </svg>
+                    <p>Priority Chart</p>
+                  </a>
                 </li>
-                <li class="nav-main-item kanban-workflow flex">
-                  <svg class="all-icons">
-                    <use xlink:href="assets/all-icons.svg#icon-workflow"></use>
-                  </svg>
-                  <p>Kanban Workflow</p>
+                <li class="nav-main-item kanban-workflow active">
+                  <a href="#" class="flex">
+                    <svg class="all-icons">
+                      <use
+                        xlink:href="assets/all-icons.svg#icon-workflow"
+                      ></use>
+                    </svg>
+                    <p>Kanban Workflow</p>
+                  </a>
                 </li>
               </ul>
             </nav>
           </header>
-          <section>
-            <div class="search-bar">
+          <section class="search-section | flex-between container">
+            <div class="search-bar | flex">
               <svg class="all-icons">
                 <use xlink:href="assets/all-icons.svg#icon-magnify"></use>
               </svg>
               <input type="text" />
             </div>
-            <div>
-              <div class="select-timeframe">
+            <div class="flex" style="gap: var(--size-600)">
+              <div class="select-timeframe | flex">
                 <div class="switch">
                   <input type="radio" />
                 </div>
@@ -184,7 +203,7 @@
                   <use xlink:href="assets/all-icons.svg#icon-expand"></use>
                 </svg>
               </div>
-              <div class="share">
+              <div class="share | flex">
                 <svg class="all-icons">
                   <use xlink:href="assets/all-icons.svg#icon-share"></use>
                 </svg>

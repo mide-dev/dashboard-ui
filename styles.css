@@ -26,12 +26,14 @@
   --clr-gold-300: hsl(49, 52%, 80%);
 
   /* project font(s) */
-  --ff-primary: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  --ff-primary: Rubik, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
   /* font weights*/
+  --fw-light: 300;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
@@ -206,11 +208,8 @@ svg {
 .main {
   height: 100vh;
   padding-block: var(--size-600);
-  overflow-y: auto;
-}
-
-.sidebar {
   position: relative;
+  overflow-y: auto;
 }
 
 .sidebar::after {
@@ -290,8 +289,23 @@ svg {
   border-radius: 5px;
 }
 
-.nav-main-list {
-  gap: 2rem;
+.nav-main-item {
+  padding-bottom: 1.2rem;
+}
+
+.nav-main-item a {
+  text-decoration: none;
+  color: var(--clr-grey-900);
+}
+
+.active {
+  border-bottom: 3px solid var(--clr-lime-400) !important;
+  margin-bottom: -2px;
+}
+
+.search-section {
+  border-block: 1px solid var(--clr-grey-400);
+  padding-block: var(--size-300);
 }
 
 .content-grid {
@@ -358,8 +372,16 @@ svg {
   margin-bottom: var(--size-500);
 }
 
-.font-bold {
-  font-weight: var(--fw-bold);
+.font-light {
+  font-weight: var(--fw-semi-bold);
+}
+
+.font-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.font-light {
+  font-weight: var(--fw-light);
 }
 
 .high-priority {
