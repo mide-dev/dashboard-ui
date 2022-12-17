@@ -208,8 +208,12 @@ svg {
 .main {
   height: 100vh;
   padding-block: var(--size-600);
-  position: relative;
+
   overflow-y: auto;
+}
+
+.sidebar {
+  position: relative;
 }
 
 .sidebar::after {
@@ -252,9 +256,20 @@ svg {
 
 /* main */
 
+.header-section,
+.search-section {
+  height: 4rem;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  /* inset: 0; */
+  /* width: 100%; */
+}
+
 .team-members {
   display: inline-flex;
 }
+
 .avatar {
   position: relative;
   border: 2px solid #fff;
@@ -308,19 +323,64 @@ svg {
   padding-block: var(--size-300);
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+input:where([type="text"]) {
+  border-style: hidden;
+  background-color: var(--clr-grey-200);
 }
 
-:where([data-tag="true"])::before {
+input:where([type="text"]):focus {
+  outline: 1px solid var(--clr-grey-200);
+}
+
+input::placeholder {
+  font-size: var(--fs-400);
+}
+
+.main-content-section {
+  padding-top: var(--size-600);
+}
+
+.content-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.to-do,
+.in-progress,
+.completed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  max-width: 350px;
+  padding: var(--size-500);
+  background-color: white;
+  border-radius: 15px;
+}
+
+.new-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--clr-grey-500);
+}
+
+.card-header,
+.card-date {
+  color: var(--clr-grey-500);
+  fill: var(--clr-grey-500);
+}
+
+[data-tag="true"]::before {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   border-radius: var(--size-500);
   padding-inline: var(--size-300);
 }
-
 /* UTILITY CLASS */
 .container {
   padding-inline: 2rem;
@@ -418,7 +478,7 @@ svg {
 }
 
 .btn-circle {
-  padding: var(--size-300);
+  padding: var(--size-200);
   border: none;
   border-radius: 50%;
 }
