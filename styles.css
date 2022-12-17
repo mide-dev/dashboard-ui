@@ -168,6 +168,11 @@ select {
   background-color: var(--clr-grey-500);
   border-radius: 10px;
 }
+/* ========== */
+::-webkit-scrollbar {
+  /* display: none; */
+}
+/* ============ */
 
 /* @supports () {
 } */
@@ -203,15 +208,18 @@ svg {
 }
 
 /* sidebar layout */
-
+/* ==================================== */
 .sidebar,
 .main {
   height: 100vh;
   padding-block: var(--size-600);
-
   overflow-y: auto;
 }
 
+.main-content-section {
+  overflow-y: auto;
+}
+/* ================================= */
 .sidebar {
   position: relative;
 }
@@ -255,15 +263,11 @@ svg {
 }
 
 /* main */
-
-.header-section,
-.search-section {
-  height: 4rem;
+.position-sticky {
+  background-color: var(--clr-grey-200);
   position: sticky;
   z-index: 1;
   top: 0;
-  /* inset: 0; */
-  /* width: 100%; */
 }
 
 .team-members {
@@ -280,7 +284,7 @@ svg {
 }
 
 .avatar:not(:first-child) {
-  margin-left: -20px;
+  margin-left: -1.2rem;
 }
 
 .other-members-wrap {
@@ -336,10 +340,6 @@ input::placeholder {
   font-size: var(--fs-400);
 }
 
-.main-content-section {
-  padding-top: var(--size-600);
-}
-
 .content-grid {
   display: grid;
   gap: 2rem;
@@ -361,6 +361,15 @@ input::placeholder {
   border-radius: 15px;
 }
 
+.card .avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.card > * {
+  margin-bottom: var(--size-400);
+}
+
 .new-task {
   display: flex;
   align-items: center;
@@ -374,12 +383,18 @@ input::placeholder {
   fill: var(--clr-grey-500);
 }
 
+.card-date {
+  font-size: var(--fs-300);
+}
+
 [data-tag="true"]::before {
   display: inline-flex;
   width: fit-content;
   align-items: center;
+  font-size: var(--fs-300);
   border-radius: var(--size-500);
   padding-inline: var(--size-300);
+  margin-bottom: var(--size-500);
 }
 /* UTILITY CLASS */
 .container {
@@ -430,6 +445,10 @@ input::placeholder {
 
 .margin-bottom {
   margin-bottom: var(--size-500);
+}
+
+.padding-top {
+  padding-top: var(--size-600);
 }
 
 .font-light {
@@ -501,7 +520,7 @@ input::placeholder {
   background-color: var(--clr-blue-300);
 }
 
-.tag-design::before {
+.tag-design-system::before {
   content: "Design System";
   color: var(--clr-gold-800);
   background-color: var(--clr-gold-300);
