@@ -97,14 +97,21 @@
                 </div>
                 <div class="no-of-projects-wrap | flex-between">
                   <p class="no-of-projects | font-semi-bold">Projects</p>
-                  <p class="no-of-projects-count | font-light">4/10</p>
+                  <p class="no-of-projects-count | font-light fs-400">4/10</p>
                 </div>
                 <div class="no-of-projects-range">
-                  <input type="range" min="0" max="10" value="6" />
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="6"
+                    id="projects-range"
+                  />
+                  <div id="progress-bar"></div>
                 </div>
                 <div class="no-of-tasks-wrap | flex-between">
                   <p class="no-of-tasks | font-semi-bold">Tasks</p>
-                  <p class="no-of-tasks-count | font-light">Unlimited</p>
+                  <p class="no-of-tasks-count | font-light fs-400">Unlimited</p>
                 </div>
               </div>
             </div>
@@ -195,9 +202,7 @@
             </div>
             <div class="flex" style="gap: var(--size-600)">
               <div class="select-timeframe | flex">
-                <div class="switch">
-                  <input type="radio" />
-                </div>
+                <input type="checkbox" checked />
                 <p>Select Timeframe</p>
                 <svg class="all-icons">
                   <use xlink:href="assets/all-icons.svg#icon-expand"></use>
@@ -236,9 +241,7 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>High</small>
-                </div>
+                <span data-tag="true" class="tag-high-priority" />
               </div>
               <p>A/BTesting-Round 3</p>
               <span data-tag="true" class="tag-research" />
@@ -263,9 +266,7 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>Low</small>
-                </div>
+                <span data-tag="true" class="tag-low-priority" />
               </div>
               <p>Create microinteraction flow</p>
               <span data-tag="true" class="tag-design" />
@@ -307,9 +308,7 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>Medium</small>
-                </div>
+                <span data-tag="true" class="tag-medium-priority" />
               </div>
               <p>Create Prototype for payments files in Protopyr</p>
               <span data-tag="true" class="tag-design-system" />
@@ -335,9 +334,7 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>Low</small>
-                </div>
+                <span data-tag="true" class="tag-low-priority" />
               </div>
               <p>Update icons for checkout</p>
               <!-- use Before/After pseudo class -->
@@ -378,9 +375,7 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>High</small>
-                </div>
+                <span data-tag="true" class="tag-high-priority" />
               </div>
               <p>Copywriting for flow payments</p>
               <!-- use Before/After pseudo class -->
@@ -395,7 +390,7 @@
             </div>
             <!--  -->
             <div class="card">
-              <div class= flex-between">
+              <div class="flex-between">
                 <div class="team-members">
                   <div class="avatar">
                     <img src="assets/48avatar.png" />
@@ -407,12 +402,9 @@
                     <img src="assets/48.png" />
                   </div>
                 </div>
-                <div class="card-task-priority">
-                  <small>Low</small>
-                </div>
+                <span data-tag="true" class="tag-medium-priority" />
               </div>
               <p class="card-text">Create microinteraction flow</p>
-              <!-- use Before/After pseudo class -->
               <span data-tag="true" class="tag-prototype" />
               <div class="card-date | flex">
                 <svg class="all-icons">
