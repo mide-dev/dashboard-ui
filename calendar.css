@@ -163,6 +163,7 @@
   border-radius: 14px;
   background-color: var(--bg-second);
   cursor: pointer;
+  border: none;
 }
 
 .dark-mode-switch-ident {
@@ -185,7 +186,8 @@
   z-index: 10;
 }
 
-.calendar-days div:hover::before {
+.calendar-days div:hover::before,
+.current-day {
   content: "";
   height: 50px;
   width: 50px;
