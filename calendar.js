@@ -12,17 +12,24 @@
 */
 
 const darkModeSwitch = document.querySelector(".dark-mode-switch");
-const calendarWrap = document.querySelector(".calendar-wrap");
+// const calendarWrap = document.querySelector(".calendar-wrap");
 const calendar = document.querySelector(".calendar");
 const calendarDays = document.querySelector(".calendar-days");
+const calendarHeader = document.querySelector(".calendar-header");
+const calendarBody = document.querySelector(".calendar-body");
+const calendarFooter = document.querySelector(".calendar-footer");
 const calendarHeaderYear = document.getElementById("year");
 const monthPicker = document.getElementById("month-picker");
+const months = document.querySelector(".months");
 
 // dark mode toggle
 darkModeSwitch.addEventListener("click", () => {
-  calendarWrap.classList.toggle("dark");
-  calendarWrap.classList.toggle("light");
+  calendar.classList.toggle("dark");
+  calendar.classList.toggle("light");
 });
+
+// prettier-ignore
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 // check for leap year
 const isLeapYear = (year) => {
@@ -44,9 +51,6 @@ const generateCalendar = (year, month) => {
 
   // prettier-ignore
   const daysOfMonth = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-  // prettier-ignore
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
   const currentDate = new Date();
 
@@ -80,6 +84,22 @@ const generateCalendar = (year, month) => {
 };
 
 // change calendar month
+monthPicker.onclick = () => {
+  // populate month names from the above month array
+  for (let i of monthNames) {
+    months.innerHTML += `<div id='${i}'>${i}</div>`;
+    i++;
+  }
+
+  // render all months
+  calendarHeader.classList.add("hidden");
+  calendarBody.classList.add("hidden");
+  calendarFooter.classList.add("hidden");
+  months.classList.remove("hidden");
+};
+
+for (let month of monthNames) {
+}
 
 const inputDate = new Date();
 

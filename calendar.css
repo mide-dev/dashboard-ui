@@ -17,10 +17,11 @@
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   --font-family: cursive;
+
+  --bg-body: var(--dark-body);
 }
 
 .dark {
-  --bg-body: var(--dark-body);
   --bg-main: var(--dark-main);
   --bg-second: var(--dark-second);
   --color-hover: var(--dark-hover);
@@ -28,7 +29,6 @@
 }
 
 .light {
-  --bg-body: var(--light-body);
   --bg-main: var(--light-main);
   --bg-second: var(--light-second);
   --color-hover: var(--light-hover);
@@ -41,12 +41,15 @@
   box-sizing: border-box;
 }
 
-.calendar-wrap {
-  height: 100vh;
+/* .calendar-wrap {
   display: grid;
   place-items: center;
   font-family: var(--font-family);
   background-color: var(--bg-body);
+} */
+
+.hidden {
+  display: none !important;
 }
 
 .calendar {
@@ -57,7 +60,6 @@
   padding: 20px;
   position: relative;
   overflow: hidden;
-  /* transform: scale(1.25); */
 }
 
 .light .calendar {
@@ -111,13 +113,15 @@
   /* border-radius: 50%; */
 }
 
-.month-picker {
+.month-picker,
+.months div {
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.month-picker:hover {
+.month-picker:hover,
+.months div:hover {
   background-color: var(--color-hover);
 }
 
@@ -145,6 +149,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+/* Months */
+.months {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 1rem;
 }
 
 .toggle {
