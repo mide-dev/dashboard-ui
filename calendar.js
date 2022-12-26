@@ -21,7 +21,6 @@ const calendarFooter = document.querySelector(".calendar-footer");
 const calendarHeaderYear = document.getElementById("year");
 const monthPicker = document.getElementById("month-picker");
 const monthsContainer = document.querySelector(".months");
-const months = document.querySelectorAll("#month");
 
 // dark mode toggle
 darkModeSwitch.addEventListener("click", () => {
@@ -69,7 +68,7 @@ const generateCalendar = (year, month) => {
 
   // Add the days of the month
   for (let i = 1; i <= daysOfMonth[month]; i++) {
-    calendarDays.innerHTML += `<div id=day-${i}>${i}</div>`;
+    calendarDays.innerHTML += `<div id='day-${i}'>${i}</div>`;
     // indicate current day's date with bg color
     if (i === currentDate.getDate()) {
       if (
@@ -84,6 +83,11 @@ const generateCalendar = (year, month) => {
   }
 };
 
+// display calendar with respect to current date
+let calendarDate = new Date();
+generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+
+// toggle months display
 const toggleMonthsDisplay = () => {
   calendarHeader.classList.toggle("hidden");
   calendarBody.classList.toggle("hidden");
@@ -92,27 +96,35 @@ const toggleMonthsDisplay = () => {
 };
 
 // change calendar month
-monthPicker.onclick = () => {
-  // populate month names from global month array
-  for (let i of monthNames) {
-    monthsContainer.innerHTML += `<div id='month'>${i}</div>`;
-    i++;
-  }
+monthPicker.addEventListener("click", () => {
   // render all months
   toggleMonthsDisplay();
-};
+});
 
-// months.forEach((month) => {
-//   month.addEventListener("click", () => {
-//     for (i of monthNames) {
-//       if (i == month.textContent) {
-//         monthPicker.innerHTML = i;
-//       }
-//       i++;
-//     }
-//   });
+const months = document.querySelectorAll(".month");
+
+months.forEach((month) => {
+  month.addEventListener("click", () => console.log("red"));
+});
+
+// month.addEventListener("click", () => {
+// i'm going to refactor the for-of loop to use forEach so i can grab the index of monthNames too...
+// might as well just use traditional loop since that gives me an index to work with...
+// for (let i of monthNames) {
+//   if (i == mon.textContent) {
+//     toggleMonthsDisplay();
+//     monthPicker.innerHTML = i;
+//     generateCalendar();
+//   }
+//   i++;
+// }
+
+// for (let i = 0; i < monthNames.length - 1; i++) {
+//   if (i == month.textContent) {
+//     toggleMonthsDisplay();
+//     monthPicker.innerHTML = monthNames[i];
+//     calendarDate.setMonth(i);
+//     generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+//   }
+// }
 // });
-
-const inputDate = new Date();
-
-generateCalendar(inputDate.getFullYear(), inputDate.getMonth());
