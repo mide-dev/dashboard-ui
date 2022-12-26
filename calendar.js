@@ -20,7 +20,8 @@ const calendarBody = document.querySelector(".calendar-body");
 const calendarFooter = document.querySelector(".calendar-footer");
 const calendarHeaderYear = document.getElementById("year");
 const monthPicker = document.getElementById("month-picker");
-const months = document.querySelector(".months");
+const monthsContainer = document.querySelector(".months");
+const months = document.querySelectorAll("#month");
 
 // dark mode toggle
 darkModeSwitch.addEventListener("click", () => {
@@ -83,23 +84,34 @@ const generateCalendar = (year, month) => {
   }
 };
 
-// change calendar month
-monthPicker.onclick = () => {
-  // populate month names from the above month array
-  for (let i of monthNames) {
-    months.innerHTML += `<div id='${i}'>${i}</div>`;
-    i++;
-  }
-
-  // render all months
-  calendarHeader.classList.add("hidden");
-  calendarBody.classList.add("hidden");
-  calendarFooter.classList.add("hidden");
-  months.classList.remove("hidden");
+const toggleMonthsDisplay = () => {
+  calendarHeader.classList.toggle("hidden");
+  calendarBody.classList.toggle("hidden");
+  calendarFooter.classList.toggle("hidden");
+  monthsContainer.classList.toggle("hidden");
 };
 
-for (let month of monthNames) {
-}
+// change calendar month
+monthPicker.onclick = () => {
+  // populate month names from global month array
+  for (let i of monthNames) {
+    monthsContainer.innerHTML += `<div id='month'>${i}</div>`;
+    i++;
+  }
+  // render all months
+  toggleMonthsDisplay();
+};
+
+// months.forEach((month) => {
+//   month.addEventListener("click", () => {
+//     for (i of monthNames) {
+//       if (i == month.textContent) {
+//         monthPicker.innerHTML = i;
+//       }
+//       i++;
+//     }
+//   });
+// });
 
 const inputDate = new Date();
 
