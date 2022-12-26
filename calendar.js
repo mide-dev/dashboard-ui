@@ -101,30 +101,25 @@ monthPicker.addEventListener("click", () => {
   toggleMonthsDisplay();
 });
 
+// SET CALENDAR MONTH TO CLICKED MONTH
 const months = document.querySelectorAll(".month");
-
+// listen for click event on each month dynamically
 months.forEach((month) => {
-  month.addEventListener("click", () => console.log("red"));
+  month.addEventListener("click", () => {
+    // find out which month is  clicked
+    // achieved this by equating the values of "monthNames" Array to the text content of clicked month
+    for (let i of monthNames) {
+      if (i == month.textContent) {
+        // once the clicked month is known, hide all months and display calendar
+        toggleMonthsDisplay();
+        // display clicked month name as header
+        monthPicker.innerHTML = i;
+        // get index of clicked month and set calendar month to that index
+        const clickedMonth = monthNames.indexOf(i);
+        calendarDate.setMonth(clickedMonth);
+        // generate calender with clicked month data
+        generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+      }
+    }
+  });
 });
-
-// month.addEventListener("click", () => {
-// i'm going to refactor the for-of loop to use forEach so i can grab the index of monthNames too...
-// might as well just use traditional loop since that gives me an index to work with...
-// for (let i of monthNames) {
-//   if (i == mon.textContent) {
-//     toggleMonthsDisplay();
-//     monthPicker.innerHTML = i;
-//     generateCalendar();
-//   }
-//   i++;
-// }
-
-// for (let i = 0; i < monthNames.length - 1; i++) {
-//   if (i == month.textContent) {
-//     toggleMonthsDisplay();
-//     monthPicker.innerHTML = monthNames[i];
-//     calendarDate.setMonth(i);
-//     generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
-//   }
-// }
-// });
