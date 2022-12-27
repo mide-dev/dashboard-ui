@@ -12,7 +12,6 @@
 */
 
 const darkModeSwitch = document.querySelector(".dark-mode-switch");
-// const calendarWrap = document.querySelector(".calendar-wrap");
 const calendar = document.querySelector(".calendar");
 const calendarDays = document.querySelector(".calendar-days");
 const calendarHeader = document.querySelector(".calendar-header");
@@ -21,6 +20,8 @@ const calendarFooter = document.querySelector(".calendar-footer");
 const calendarHeaderYear = document.getElementById("year");
 const monthPicker = document.getElementById("month-picker");
 const monthsContainer = document.querySelector(".months");
+const previousYearBtn = document.getElementById("prev-year");
+const nextYearBtn = document.getElementById("next-year");
 
 // dark mode toggle
 darkModeSwitch.addEventListener("click", () => {
@@ -30,6 +31,7 @@ darkModeSwitch.addEventListener("click", () => {
 
 // prettier-ignore
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+let calendarYear;
 
 // check for leap year
 const isLeapYear = (year) => {
@@ -56,7 +58,7 @@ const generateCalendar = (year, month) => {
 
   // set display for current month & year
   monthPicker.innerHTML = monthNames[month];
-  calendarHeaderYear.innerHTML = year;
+  calendarHeaderYear.innerHTML = calendarYear = year;
 
   //  get day of the week the first day falls on
   const firstDay = new Date(year, month, 1);
@@ -85,7 +87,13 @@ const generateCalendar = (year, month) => {
 
 // display calendar with respect to current date
 let calendarDate = new Date();
-generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+
+// generate calendar function
+const renderCalendar = () => {
+  generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+};
+// render calendar
+renderCalendar();
 
 // toggle months display
 const toggleMonthsDisplay = () => {
@@ -95,7 +103,7 @@ const toggleMonthsDisplay = () => {
   monthsContainer.classList.toggle("hidden");
 };
 
-// change calendar month
+// let user change calendar month
 monthPicker.addEventListener("click", () => {
   // render all months
   toggleMonthsDisplay();
@@ -107,19 +115,32 @@ const months = document.querySelectorAll(".month");
 months.forEach((month) => {
   month.addEventListener("click", () => {
     // find out which month is  clicked
-    // achieved this by equating the values of "monthNames" Array to the text content of clicked month
+    // achieved this by finding a match btw "monthNames" Array and text content of clicked month
     for (let i of monthNames) {
       if (i == month.textContent) {
         // once the clicked month is known, hide all months and display calendar
         toggleMonthsDisplay();
-        // display clicked month name as header
-        monthPicker.innerHTML = i;
-        // get index of clicked month and set calendar month to that index
+        // set calendar month to clicked month
         const clickedMonth = monthNames.indexOf(i);
         calendarDate.setMonth(clickedMonth);
-        // generate calender with clicked month data
-        generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
+        // re-render calender with clicked month data
+        renderCalendar();
       }
     }
   });
 });
+
+// LET USER SET CALENDAR YEAR
+// decrease calendar year
+previousYearBtn.onclick = () => {
+  calendarYear--;
+  calendarDate.setFullYear(calendarYear);
+  renderCalendar();
+};
+
+// increase calendar year
+nextYearBtn.onclick = () => {
+  calendarYear++;
+  calendarDate.setFullYear(calendarYear);
+  renderCalendar();
+};

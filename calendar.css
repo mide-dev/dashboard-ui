@@ -41,13 +41,6 @@
   box-sizing: border-box;
 }
 
-/* .calendar-wrap {
-  display: grid;
-  place-items: center;
-  font-family: var(--font-family);
-  background-color: var(--bg-body);
-} */
-
 .hidden {
   display: none !important;
 }
@@ -56,6 +49,7 @@
   height: max-content;
   width: max-content;
   background-color: var(--bg-main);
+  color: var(--dark-text);
   border-radius: 30px;
   padding: 20px;
   position: relative;
@@ -110,7 +104,6 @@
   position: relative;
   cursor: pointer;
   animation: to-top 1s forwards;
-  /* border-radius: 50%; */
 }
 
 .month-picker,
@@ -160,6 +153,11 @@
   padding: 1rem;
 }
 
+.month {
+  font-size: 1.1rem;
+  color: var(--color-txt);
+}
+
 .toggle {
   display: flex;
 }
@@ -186,13 +184,13 @@
   background-color: var(--bg-main);
   position: absolute;
   top: 2px;
-  left: 2px;
-  transition: left 0.2s ease-in-out;
+  right: 2px;
+  transition: right 0.2s ease-in-out;
 }
 
 .dark .dark-mode-switch .dark-mode-switch-ident {
   top: 2px;
-  left: calc(2px + 50%);
+  right: calc(2px + 50%);
 }
 
 .calendar-days div {
