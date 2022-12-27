@@ -11,12 +11,12 @@
   --light-hover: #edf0f5;
   --light-text: #151426;
 
-  --blue: #0000ff;
   --white: #fff;
 
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  --font-family: cursive;
+  --font-family: Rubik, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 
   --bg-body: var(--dark-body);
 }

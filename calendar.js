@@ -1,16 +1,5 @@
 "use strict";
 
-/*
-- calc leap year and normal year
-- calc days in feb using leap year
-- generate calendar to display days in each month
-- month button links to all month
-- year button links to all year
-- <> - decrease and increase year
-- place background color on current date
-- calendar always show current day page
-*/
-
 const darkModeSwitch = document.querySelector(".dark-mode-switch");
 const calendar = document.querySelector(".calendar");
 const calendarDays = document.querySelector(".calendar-days");
@@ -88,7 +77,7 @@ const generateCalendar = (year, month) => {
 // display calendar with respect to current date
 let calendarDate = new Date();
 
-// generate calendar function
+// render calendar function
 const renderCalendar = () => {
   generateCalendar(calendarDate.getFullYear(), calendarDate.getMonth());
 };
