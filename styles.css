@@ -400,6 +400,10 @@ input[type="checkbox"]:checked::after {
   left: 70%;
 }
 
+.select-timeframe {
+  position: relative;
+}
+
 .content-grid {
   display: grid;
   gap: 2rem;

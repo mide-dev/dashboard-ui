@@ -12,12 +12,6 @@ const monthsContainer = document.querySelector(".months");
 const previousYearBtn = document.getElementById("prev-year");
 const nextYearBtn = document.getElementById("next-year");
 
-// dark mode toggle
-darkModeSwitch.addEventListener("click", () => {
-  calendar.classList.toggle("dark");
-  calendar.classList.toggle("light");
-});
-
 // prettier-ignore
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 let calendarYear;
@@ -54,7 +48,7 @@ const generateCalendar = (year, month) => {
 
   // Add empty cells for the days of the week that come before the first day of the month
   for (let i = 0; i < firstDay.getDay(); i++) {
-    calendarDays.innerHTML += `<div></div>`;
+    calendarDays.innerHTML += `<span></span>`;
   }
 
   // Add the days of the month
@@ -88,7 +82,6 @@ renderCalendar();
 const toggleMonthsDisplay = () => {
   calendarHeader.classList.toggle("hidden");
   calendarBody.classList.toggle("hidden");
-  calendarFooter.classList.toggle("hidden");
   monthsContainer.classList.toggle("hidden");
 };
 
