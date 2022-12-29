@@ -1,26 +1,20 @@
-.dark {
-  --bg-main: var(--clr-grey-900);
-  --color-hover: var(--clr-grey-600);
-  --color-txt: var(--clr-grey-200);
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .calendar {
+  --bg-main: var(--clr-grey-900);
+  --color-hover: var(--clr-grey-600);
+  --color-txt: var(--clr-grey-200);
+
   height: fit-content;
   width: fit-content;
   background-color: var(--bg-main);
-  color: var(--clr-grey-200);
-  border-radius: 30px;
-  padding: 20px;
+  color: var(--color-txt);
+  border-radius: 20px;
+  padding: var(--size-200);
   position: absolute;
   top: 40px;
   right: -40px;
@@ -32,43 +26,45 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: var(--fs-650);
+  font-weight: var(--fw-bold);
   color: var(--color-txt);
-  padding: 10px;
+  padding: var(--size-300);
 }
 
 .calendar-body {
-  padding: 10px;
+  padding: var(--size-300);
 }
 
 .calendar-week-day {
   height: 50px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  font-weight: 600;
+  font-weight: var(--fw-normal);
+  color: var(--clr-grey-500);
+  font-size: var(--fs-500);
 }
 
 .calendar-week-day div {
   display: grid;
   place-items: center;
-  color: var(--bg-second);
 }
 
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: var(--size-50);
   color: var(--color-txt);
+  font-size: var(--fs-300);
 }
 
 .calendar-days div {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: var(--size-100);
   position: relative;
   cursor: pointer;
   animation: to-top 1s forwards;
@@ -76,7 +72,8 @@
 
 .month-picker,
 .months div {
-  padding: 5px 10px;
+  padding-block: var(--size-100);
+  padding-inline: var(--size-200);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -126,10 +123,15 @@
 .calendar-days div:hover::before,
 .current-day {
   content: "";
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-color: var(--clr-lime-300);
+  color: var(--clr-grey-900);
   position: absolute;
   border-radius: 50%;
   z-index: -1;
+}
+
+.calendar-days div:hover {
+  color: var(--clr-grey-900);
 }
